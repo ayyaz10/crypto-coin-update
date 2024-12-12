@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import ayyazImg from "/src/assets/ayyaz.png";
+import daniImg from "/src/assets/dani.png";
 
-const RealTimeCoinData = () => {
+const App = () => {
   const [coinData, setCoinData] = useState(null);
   const [previousPrice, setPreviousPrice] = useState(null);
   const [error, setError] = useState(null);
@@ -44,38 +46,75 @@ const RealTimeCoinData = () => {
   const daniCoins = 80.1;
 
   return (
-    <div>
-      <h1>
-        {name} ({symbol})
-      </h1>
-      <p>Price (USD): ${parseFloat(priceUsd).toFixed(2)}</p>
-      <p>24Hr Change: {parseFloat(changePercent24Hr).toFixed(2)}%</p>
-      <div className="personlized-data">
-        <div className="ayyaz-data">
-          <img
-            src="/src/assets/ayyaz-removebg-sreview.png"
-            alt=""
-            className="image"
-          />
-          <h3 className="name">Ayyaz 🤑</h3>
-          <p className="current-profit">
-            ${parseFloat(ayyazCoins * priceUsd).toFixed(3)}
-          </p>
+    <div className="max-w-[80%] mx-auto">
+      <div className="flex">
+        <div className="ml-auto">
+          <h1 className="text-gray-900 dark:text-white py-2">
+            {name} ({symbol})
+          </h1>
+
+          <table className="">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  Price (USD)
+                </th>
+                <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  24Hr Change
+                </th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="text-gray-900 dark:text-white px-6 py-4">
+                ${parseFloat(priceUsd).toFixed(2)}
+              </td>
+              <td class="text-gray-900 dark:text-white px-6 py-4">
+                {parseFloat(changePercent24Hr).toFixed(2)}%
+              </td>
+            </tr>
+          </table>
         </div>
-        <div className="ayyaz-data">
-          <img
-            src="./assets/dani-removebg-preview.png"
-            alt=""
-            className="image"
-          />
-          <h3 className="name">Daniyal 🤑</h3>
-          <p className="current-profit">
-            ${parseFloat(daniCoins * priceUsd).toFixed(3)}
-          </p>
+      </div>
+      <div className="personlized-data flex-col">
+        <div className="ayyaz-data flex items-center border border-gray-500 rounded-md p-4 mb-2">
+          <div className="">
+            <img
+              src={ayyazImg}
+              alt=""
+              className="image rounded-full"
+              width={80}
+            />
+            <h2 className="text-xl font-bold leading-none text-gray-900 dark:text-white p-2">
+              Ayyaz 🤑
+            </h2>
+          </div>
+          <div className="ml-auto">
+            <p className="text-xl font-bold text-gray-900 dark:text-white ml-auto">
+              ${parseFloat(ayyazCoins * priceUsd).toFixed(3)}
+            </p>
+          </div>
+        </div>
+        <div className="ayyaz-data flex items-center border border-gray-500 rounded-md p-4">
+          <div className="">
+            <img
+              src={daniImg}
+              alt=""
+              className="image rounded-full"
+              width={80}
+            />
+            <h2 className="text-xl font-bold leading-none text-gray-900 dark:text-white p-2">
+              Danyal 🤑
+            </h2>
+          </div>
+          <div className="ml-auto">
+            <p className="text-xl font-bold text-gray-900 dark:text-white ml-auto">
+              ${parseFloat(daniCoins * priceUsd).toFixed(3)}
+            </p>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default RealTimeCoinData;
+export default App;
