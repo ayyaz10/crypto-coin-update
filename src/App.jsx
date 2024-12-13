@@ -42,8 +42,9 @@ const App = () => {
   if (!coinData) return <p>Loading...</p>;
 
   const { name, symbol, priceUsd, changePercent24Hr } = coinData;
-  const ayyazCoins = 447.5;
-  const daniCoins = 80.1;
+  const AYYAZBUYING = 447.5;
+  const DANIBUYING = 80.1;
+  const AVGCOST = 1.06;
 
   return (
     <div className="max-w-[80%] mx-auto">
@@ -89,12 +90,47 @@ const App = () => {
             </h2>
           </div>
           <div className="ml-auto">
-            <p className="text-xl font-bold text-gray-900 dark:text-white ml-auto">
+            {/* <p className="text-xl font-bold text-gray-900 dark:text-white ml-auto">
               ${parseFloat(ayyazCoins * priceUsd).toFixed(3)}
-            </p>
+            </p> */}
+            <table className="">
+              <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Coins
+                  </th>
+                  <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Buying
+                  </th>
+                  <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Profit
+                  </th>
+                  <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Total Profit
+                  </th>
+                </tr>
+              </thead>
+              <tr>
+                <td class="text-gray-900 dark:text-white px-6 py-4">
+                  ${AYYAZBUYING.toFixed(2)}
+                </td>
+                <td class="text-gray-900 dark:text-white px-6 py-4">
+                  ${parseFloat(AYYAZBUYING * AVGCOST).toFixed(2)}
+                </td>
+                <td class=" text-green-400 dark:text-green-400 px-6 py-4">
+                  $
+                  {parseFloat(
+                    AYYAZBUYING * priceUsd - AYYAZBUYING * AVGCOST
+                  ).toFixed(2)}
+                </td>
+                <td class="text-gray-900 dark:text-white px-6 py-4">
+                  ${parseFloat(AYYAZBUYING * priceUsd).toFixed(2)}
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
-        <div className="ayyaz-data flex items-center border border-gray-500 rounded-md p-4">
+        <div className="ayyaz-data flex items-center border border-gray-500 rounded-md p-4 mb-2">
           <div className="">
             <img
               src={daniImg}
@@ -103,13 +139,48 @@ const App = () => {
               width={80}
             />
             <h2 className="text-xl font-bold leading-none text-gray-900 dark:text-white p-2">
-              Danyal 🤑
+              Daniyal 🤑
             </h2>
           </div>
           <div className="ml-auto">
-            <p className="text-xl font-bold text-gray-900 dark:text-white ml-auto">
-              ${parseFloat(daniCoins * priceUsd).toFixed(3)}
-            </p>
+            {/* <p className="text-xl font-bold text-gray-900 dark:text-white ml-auto">
+              ${parseFloat(ayyazCoins * priceUsd).toFixed(3)}
+            </p> */}
+            <table className="">
+              <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Coins
+                  </th>
+                  <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Buying
+                  </th>
+                  <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Profit
+                  </th>
+                  <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Total Profit
+                  </th>
+                </tr>
+              </thead>
+              <tr>
+                <td class="text-gray-900 dark:text-white px-6 py-4">
+                  ${DANIBUYING.toFixed(2)}
+                </td>
+                <td class="text-gray-900 dark:text-white px-6 py-4">
+                  ${parseFloat(DANIBUYING * AVGCOST).toFixed(2)}
+                </td>
+                <td class=" text-green-400 dark:text-green-400 px-6 py-4">
+                  $
+                  {parseFloat(
+                    DANIBUYING * priceUsd - DANIBUYING * AVGCOST
+                  ).toFixed(2)}
+                </td>
+                <td class="text-gray-900 dark:text-white px-6 py-4">
+                  ${parseFloat(DANIBUYING * priceUsd).toFixed(2)}
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
