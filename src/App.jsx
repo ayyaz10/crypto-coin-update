@@ -49,12 +49,12 @@ const App = () => {
   return (
     <div className="max-w-[80%] mx-auto">
       <div className="flex">
-        <div className="ml-auto">
+        <div className="ml-auto  overflow-x-auto">
           <h1 className="text-gray-900 dark:text-white py-2">
             {name} ({symbol})
           </h1>
 
-          <table className="">
+          <table className="table-auto">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -89,11 +89,11 @@ const App = () => {
               Ayyaz 🤑
             </h2>
           </div>
-          <div className="ml-auto">
+          <div className="ml-auto overflow-x-auto">
             {/* <p className="text-xl font-bold text-gray-900 dark:text-white ml-auto">
               ${parseFloat(ayyazCoins * priceUsd).toFixed(3)}
             </p> */}
-            <table className="">
+            <table className="table-auto">
               <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                   <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -142,11 +142,11 @@ const App = () => {
               Daniyal 🤑
             </h2>
           </div>
-          <div className="ml-auto">
+          <div className="ml-auto overflow-x-auto">
             {/* <p className="text-xl font-bold text-gray-900 dark:text-white ml-auto">
               ${parseFloat(ayyazCoins * priceUsd).toFixed(3)}
             </p> */}
-            <table className="">
+            <table className="table-auto">
               <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                   <th className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
